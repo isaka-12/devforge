@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "devforge"
+name = "devforge-cli"
 version = "1.0.0"
 description = "Universal project scaffolder for React, FastAPI, and Flutter"
 readme = "README.md"

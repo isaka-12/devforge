@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name='devforge',
+    name='devforge-cli',  # Changed to avoid name conflict
     version='1.0.0',
     description='Universal project scaffolder for React, FastAPI, and Flutter',
     long_description=long_description,

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='devforge-cli',  # Changed to avoid name conflict
-    version='1.0.0',
+    version='1.0.1',  # Version bump for colorful output and version command
     description='Universal project scaffolder for React, FastAPI, and Flutter',
     long_description=long_description,
     long_description_content_type="text/markdown",

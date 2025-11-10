@@ -59,8 +59,10 @@ def init(react, fastapi, flutter):
             break
     
     if not selected_framework:
-        click.echo("⚠️  Please specify a stack: --react, --fastapi, or --flutter")
-        click.echo("\nTip: Run 'devforge list' to see all available frameworks")
+        click.secho("⚠️  Please specify a stack: --react, --fastapi, or --flutter", fg='yellow')
+        click.echo()
+        click.secho("Tip: ", fg='cyan', nl=False)
+        click.echo("Run 'devforge list' to see all available frameworks")
         return
     
     # Get the appropriate scaffolder and run it
@@ -68,9 +70,9 @@ def init(react, fastapi, flutter):
         scaffolder = get_scaffolder(selected_framework)
         scaffolder.forge()
     except KeyError as e:
-        click.echo(f"❌ Error: {e}")
+        click.secho(f"❌ Error: {e}", fg='red')
     except Exception as e:
-        click.echo(f"❌ Unexpected error: {e}")
+        click.secho(f"❌ Unexpected error: {e}", fg='red')
 
 
 @cli.command()
@@ -80,25 +82,39 @@ def list():
     
     Shows all frameworks that can be scaffolded with DevForge.
     """
-    click.echo("� Available frameworks in DevForge:\n")
+    click.secho("\n🔥 Available frameworks in DevForge:\n", fg='cyan', bold=True)
     
     frameworks = list_available_frameworks()
     for framework_key in frameworks:
         try:
             scaffolder = get_scaffolder(framework_key)
-            click.echo(f"  {scaffolder.emoji} {scaffolder.framework_name.ljust(15)} (--{framework_key})")
+            click.secho(f"  {scaffolder.emoji} ", nl=False, fg='yellow')
+            click.secho(f"{scaffolder.framework_name.ljust(15)}", nl=False, fg='green', bold=True)
+            click.secho(f" (--{framework_key})", fg='white')
         except Exception:
             click.echo(f"  • {framework_key.ljust(15)} (--{framework_key})")
     
-    click.echo(f"\nTotal: {len(frameworks)} frameworks")
-    click.echo("\nUsage: devforge init --<framework>")
+    click.echo()
+    click.secho(f"Total: {len(frameworks)} frameworks", fg='cyan')
+    click.echo()
+    click.secho("Usage: ", fg='yellow', nl=False)
+    click.secho("devforge init --<framework>", fg='white', bold=True)
 
 
 @cli.command()
 def version():
     """Display the version of DevForge."""
-    click.echo("DevForge v1.0.0")
-    click.echo("Universal project scaffolder")
+    click.secho("🔥 DevForge v1.0.1", fg='cyan', bold=True)
+    click.secho("Universal project scaffolder for React, FastAPI, and Flutter", fg='white')
+    click.echo()
+    click.secho("📦 Package: ", fg='yellow', nl=False)
+    click.echo("devforge-cli")
+    click.secho("🌐 Homepage: ", fg='yellow', nl=False)
+    click.echo("https://github.com/isaka-12/devforge")
+    click.secho("📚 Docs: ", fg='yellow', nl=False)
+    click.echo("https://github.com/isaka-12/devforge#readme")
+    click.echo()
+    click.secho("💡 Tip: Run 'devforge list' to see available frameworks", fg='green')
 
 
 if __name__ == "__main__":

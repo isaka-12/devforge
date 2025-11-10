@@ -1,0 +1,15 @@
+README.md
+setup.py
+devforge/__init__.py
+devforge/cli.py
+devforge.egg-info/PKG-INFO
+devforge.egg-info/SOURCES.txt
+devforge.egg-info/dependency_links.txt
+devforge.egg-info/entry_points.txt
+devforge.egg-info/requires.txt
+devforge.egg-info/top_level.txt
+devforge/scaffolders/__init__.py
+devforge/scaffolders/base.py
+devforge/scaffolders/fastapi.py
+devforge/scaffolders/flutter.py
+devforge/scaffolders/react.py

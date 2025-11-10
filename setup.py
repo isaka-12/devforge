@@ -11,11 +11,11 @@ setup(
     long_description_content_type="text/markdown",
     author='Isaka Mtweve',
     author_email='isakamtweve69@gmail.com',
-    url='https://github.com/isakamtweve/devforge',
+    url='https://github.com/isaka-12/devforge',
     project_urls={
-        'Bug Reports': 'https://github.com/isakamtweve/devforge/issues',
-        'Source': 'https://github.com/isakamtweve/devforge',
-        'Documentation': 'https://github.com/isakamtweve/devforge#readme',
+        'Bug Reports': 'https://github.com/isaka-12/devforge/issues',
+        'Source': 'https://github.com/isaka-12/devforge',
+        'Documentation': 'https://github.com/isaka-12/devforge#readme',
     },
     packages=find_packages(exclude=['tests*', 'docs*']),
     install_requires=[

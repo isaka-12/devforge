@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include ARCHITECTURE.md
+include TUTORIAL.md
+include REFACTORING_SUMMARY.md
+recursive-include devforge *.py
